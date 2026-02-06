@@ -1,3 +1,6 @@
+import random 
+import time
+import matplotlib.pyplot as plt
 def merge_sort(a):
     n=len(a)
     if (n>1):
@@ -28,5 +31,23 @@ def merge(a,b,c):
         j+=1
         k+=1
     print(a)
-a=[11,3,22,7,9,1]
-merge_sort(a)
+    
+# n=5000
+# a=[random.randint(1,1000)for _ in range(n)]   
+# merge_sort(a)
+
+sizes = [5000, 6000, 7000, 8000, 9000, 10000]
+times = []
+
+for s in sizes:
+    arr = [random.randint(1, 10000) for _ in range(s)]
+    start = time.time()
+    merge_sort(arr)
+    end = time.time()
+    times.append(end - start)
+
+# print(sizes)
+# print(times)
+
+plt.plot(sizes, times)
+plt.show()

@@ -1,9 +1,13 @@
+"""Design and implement C/JAVA/Python Program to find shortest paths from a given 
+vertex in a weighted connected graph to other vertices using Dijkstra's algorithm.
+"""
+
 INF = 99999
 
 def dijkstra(graph, source, n):
     visited = [False] * n
     dist = [INF] * n
-
+  
     dist[source] = 0
 
     for _ in range(n):
